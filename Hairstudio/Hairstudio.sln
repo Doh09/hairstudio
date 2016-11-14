@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hairstudio_MVC", "Hairstudio_MVC\Hairstudio_MVC.csproj", "{56AEE551-4C77-489D-977E-82D7EF061F68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hairstudio_DLL", "Hairstudio_DLL\Hairstudio_DLL.csproj", "{31C21F29-6504-4AC9-9C1A-FA0CE228B828}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56AEE551-4C77-489D-977E-82D7EF061F68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56AEE551-4C77-489D-977E-82D7EF061F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56AEE551-4C77-489D-977E-82D7EF061F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56AEE551-4C77-489D-977E-82D7EF061F68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31C21F29-6504-4AC9-9C1A-FA0CE228B828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31C21F29-6504-4AC9-9C1A-FA0CE228B828}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31C21F29-6504-4AC9-9C1A-FA0CE228B828}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31C21F29-6504-4AC9-9C1A-FA0CE228B828}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
