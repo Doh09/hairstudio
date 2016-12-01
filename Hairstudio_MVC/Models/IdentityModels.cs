@@ -29,5 +29,9 @@ namespace Hairstudio_MVC.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<HSRestAPI_DLL.Entities.Hairdresser> Hairdressers { get; set; }
+
+        public System.Data.Entity.DbSet<HSRestAPI_DLL.Entities.Appointment> Appointments { get; set; }
     }
 }

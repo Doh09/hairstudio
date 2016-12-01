@@ -1,0 +1,22 @@
+﻿@model DateTime
+Using Date Template
+@Html.TextBox("", String.Format("{0:d}", Model.ToShortDateString()),
+  new { @class = "datefield", type = "date" })
+
+
+@*@{//Standard code, commented out instead of delete just in case I need it.
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Date</title>
+</head>
+<body>
+    <div> 
+    </div>
+</body>
+</html>*@
