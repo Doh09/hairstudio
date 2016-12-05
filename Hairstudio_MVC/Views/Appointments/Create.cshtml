@@ -1,11 +1,34 @@
-﻿@model HSRestAPI_DLL.Entities.Appointment
+﻿@model Hairstudio_MVC.Models.VIewModel_CreateAppointment
 <head>
     
 </head>
 @{
     ViewBag.Title = "Create";
 }
-
+@{
+            var hairdresserDropDown = new List<SelectListItem>();
+            foreach (var item in Model.Hairdressers)
+            {
+                var selectListItem = new SelectListItem
+                {
+                    Text = item.Name,
+                    Value = item.ID.ToString(),
+                };
+                hairdresserDropDown.Add(selectListItem);
+            }
+}
+@{
+            var customerDropDown = new List<SelectListItem>();
+            foreach (var item in Model.Customers)
+            {
+                var selectListItem = new SelectListItem
+                {
+                    Text = item.Name,
+                    Value = item.ID.ToString(),
+                };
+                customerDropDown.Add(selectListItem);
+            }
+}
 <h2>Create</h2>
 
 
@@ -20,46 +43,29 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                
-                @*//Datepicker begin*@
-                <div class="container">
-                    <div class="row">
-                        <h2>timepicker dropdown</h2>
-                    </div>
-
-                    <div class="btn-group timepickercontainer dropdown focus-active" id="atimepicker" data-value="11:45AM">
-                        <button type="button" data-onClick="ScrollToActive(this);" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            11:45AM <i class="caret"></i>
-                        </button>
-                        <ul class="dropdown-menu" onLoad="SetScrollValue(this);">
-
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="8:00AM">8:00AM</a></li>
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="8:30AM">8:30AM</a></li>
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="9:00AM">9:00AM</a></li>
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="9:30AM">9:30AM</a></li>
-                            <li><a href="#" onclick="
-HandleTimeSelect(this);" data-value="10:00AM">10:00AM</a></li>
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="10:30AM">10:30AM</a></li>
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="11:00AM">11:00AM</a></li>
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="11:30AM">11:30AM</a></li>
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="12:00PM">12:00PM</a></li>
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="12:30PM">12:30PM</a></li>
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="1:00PM">1:00PM</a></li>
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="1:30PM">1:30PM</a></li>
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="2:00PM">2:00PM</a></li>
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="2:30PM">2:30PM</a></li>
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="3:00PM">3:00PM</a></li>
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="3:30PM">3:30PM</a></li>
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="4:00PM">4:00PM</a></li>
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="4:30PM">4:30PM</a></li>
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="5:00PM">5:00PM</a></li>
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="5:30PM">5:30PM</a></li>
-                            <li><a href="#" onclick="HandleTimeSelect(this);" data-value="6:00PM">6:00PM</a></li>
-
-                        </ul>
-                        <script> $(".dropdown.focus-active").on("shown.bs.dropdown", function() { $(this).find(".dropdown-menu li.active a").focus(); });</script>
+                @*//*@
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Appointment.TimeRange.TheDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Appointment.TimeRange.TheDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Appointment.TimeRange.TheDate, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                @*//Datepicker end*@
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Appointment.TimeRange.StartTime, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Appointment.TimeRange.StartTime, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Appointment.TimeRange.StartTime, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Appointment.TimeRange.EndTime, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Appointment.TimeRange.EndTime, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Appointment.TimeRange.EndTime, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                @*//*@
                 <input type="submit" value="Create" class="btn btn-default"/>
             </div>
         </div>

@@ -4,15 +4,50 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detaljer</h2>
 
 <div>
-    <h4>Appointment</h4>
+    <h4>Frisørtid</h4>
+    <dt>
+        @Html.DisplayNameFor(model => model.TimeRange.TheDate)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.TimeRange.TheDate)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.TimeRange.StartTime)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.TimeRange.StartTime)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.TimeRange.EndTime)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.TimeRange.EndTime)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Hairdresser.Name)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Hairdresser.Name)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Customer.Name)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Customer.Name)
+    </dd>
     <hr />
     <dl class="dl-horizontal">
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Rediger", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Tilbage til oversigten", "Index")
 </p>

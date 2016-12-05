@@ -111,6 +111,7 @@ namespace Hairstudio_MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Hairdresser hairdresser = _hg.Get(id);
+
             _hg.Remove(hairdresser);
             return RedirectToAction("Index");
         }

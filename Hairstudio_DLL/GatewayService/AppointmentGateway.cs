@@ -23,7 +23,7 @@ namespace Hairstudio_DLL.GatewayService
             using (var client = new HttpClient())
             {
                 SetUpClientConnection(client);
-
+                //Presumably an issue here due to hairdresser/customer being null.
                 HttpResponseMessage response = client.PostAsJsonAsync("api/Appointments", t).Result;
                 if (response.IsSuccessStatusCode)
                 {

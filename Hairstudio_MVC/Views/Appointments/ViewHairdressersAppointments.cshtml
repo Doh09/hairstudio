@@ -1,0 +1,29 @@
+﻿@model Hairstudio_MVC.Models.ViewModel_AHairdressersAppointments;
+@{
+    ViewBag.Title = "ViewHairdressersAppointments";
+}
+
+<h2>ViewHairdressersAppointments</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.HairdresserName)*@
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.TimeRange.TheDate)*@
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

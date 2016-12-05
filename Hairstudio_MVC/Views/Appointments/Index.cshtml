@@ -4,29 +4,52 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Oversigt</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Opret ny frisørtid", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.TimeRange.TheDate)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeRange.StartTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hairdresser.Name)
+        </th>
+        @*<th>
+                @Html.ActionLink("Continue Shopping", "Index", "Movie")
+            </th>*@
+        <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TimeRange.TheDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new {id = item.ID}) |
-            @Html.ActionLink("Details", "Details", new {id = item.ID}) |
-            @Html.ActionLink("Delete", "Delete", new {id = item.ID})
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeRange.TheDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeRange.StartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hairdresser.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Rediger", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Se Detaljer", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Slet", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
 
 </table>

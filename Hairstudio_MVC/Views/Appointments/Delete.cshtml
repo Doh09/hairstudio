@@ -4,11 +4,27 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Slet aftale</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Er du sikker på du ønsker at slette denne frisørtid?</h3>
 <div>
-    <h4>Appointment</h4>
+    <h4>Frisøraftale</h4>
+    <dt>
+        @Html.DisplayNameFor(model => model.TimeRange.TheDate)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.TimeRange.TheDate)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.TimeRange.StartTime)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Hairdresser.Name)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Customer.Name)
+    </dt>
     <hr />
     <dl class="dl-horizontal">
     </dl>
@@ -17,8 +33,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Bekræft sletning" class="btn btn-default" /> |
+            @Html.ActionLink("Tilbage til oversigten", "Index")
         </div>
     }
 </div>

@@ -15,11 +15,12 @@ namespace Hairstudio_MVC.Controllers
     public class AppointmentsController : Controller
     {
         private readonly IGatewayService<Appointment> _ag = new Facade().GetAppointmentGateway();
+        private readonly IGatewayService<Hairdresser> _hg = new Facade().GetHairdresserGateway();
 
         // GET: Appointments
         public ActionResult Index()
         {
-            var appointments = _ag.GetAll();;
+            var appointments = _ag.GetAll(); ;
             return View(appointments);
         }
 
@@ -41,6 +42,9 @@ namespace Hairstudio_MVC.Controllers
         // GET: Appointments/Create
         public ActionResult Create()
         {
+            var appointment = new Appointment();
+            appointment.TimeRange = new TimeRange();
+            
             return View();
         }
 
@@ -49,7 +53,7 @@ namespace Hairstudio_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID")] Appointment appointment)
+        public ActionResult Create(Appointment appointment)//[Bind(Include = "ID")]
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +84,7 @@ namespace Hairstudio_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID")] Appointment appointment)
+        public ActionResult Edit(Appointment appointment) //[Bind(Include = "ID")] 
         {
             if (ModelState.IsValid)
             {
@@ -123,5 +127,27 @@ namespace Hairstudio_MVC.Controllers
         //    }
         //    base.Dispose(disposing);
         //}
+
+        #region Non-scaffolded
+                // GET: Appointments/Edit/5
+        public ActionResult ViewHairdressersAppointments(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Hairdresser hairdresser = _hg.Get(id.Value);
+            if (hairdresser == null)
+            {
+                return HttpNotFound();
+            }
+            var model = new ViewModel_AHairdressersAppointments();
+            model.HairdresserID = hairdresser.ID;
+            model.HairdresserName = hairdresser.Name;
+            model.Appointments = hairdresser.Appointments;
+            model.WorkingDays = hairdresser.WorkingDays;
+            return View(model);
+        }
+        #endregion
     }
 }

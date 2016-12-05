@@ -45,6 +45,15 @@ namespace Hairstudio_MVC
               "~/Content/themes/base/jquery.ui.progressbar.css",
               "~/Content/themes/base/jquery.ui.theme.css"));
             #endregion
+
+            #region Timepicker
+            bundles.Add(new ScriptBundle("~/bundles/mycustomjquery")
+                    .Include("~/Scripts/jquery.timepicker.js")
+                    .Include("~/Scripts/jquery.timepicker.min.js"));
+
+            bundles.Add(new StyleBundle("~/Content/timepicker").Include(
+                "~/Content/themes/base/jquery.timepicker.css"));
+            #endregion
         }
     }
 }

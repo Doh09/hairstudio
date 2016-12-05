@@ -15,9 +15,14 @@ namespace HSRestAPI_DLL.Entities
         - End time
          */
         [DataType(DataType.Date)]
-        public DateTime TheDate { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        [Display(Name = "Dato")]
+        public DateTime TheDate { get; set; } = DateTime.Now;
+        [DataType(DataType.Time)]
+        [Display(Name = "Aftalt tidspunkt")]
+        public DateTime StartTime { get; set; } = DateTime.Now;
+        [DataType(DataType.Time)]
+        [Display(Name = "Forventet sluttidspunkt")]
+        public DateTime EndTime { get; set; } = DateTime.Now;
 
         #region TheDate
         /// <summary>

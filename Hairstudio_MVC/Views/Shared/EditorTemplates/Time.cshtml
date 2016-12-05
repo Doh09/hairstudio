@@ -1,7 +1,15 @@
-﻿@model DateTime
-Using Date Template
-@Html.TextBox("", String.Format("{0:d}", Model.ToShortDateString()),
-  new { @class = "datefield", type = "date" })
+﻿@model Nullable<DateTime>
+@{
+    DateTime dt = DateTime.Now;
+    if (Model != null)
+    {
+        dt = (System.DateTime)Model;
+
+    }
+    @Html.TextBox("", String.Format("{0:d}", dt.ToShortTimeString()), new { @class = "timefield", type = "time" })
+}
+
+ 
 
 
 @*@{//Standard code, commented out instead of delete just in case I need it.

@@ -15,9 +15,6 @@
             @Html.DisplayNameFor(model => model.Username)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Password)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
@@ -26,9 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Email)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserType)
-        </th>
+        @*<th>
+            @Html.ActionLink("Continue Shopping", "Index", "Movie")
+        </th>*@
         <th></th>
     </tr>
 
@@ -38,9 +35,6 @@
             @Html.DisplayFor(modelItem => item.Username)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
@@ -48,9 +42,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserType)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
