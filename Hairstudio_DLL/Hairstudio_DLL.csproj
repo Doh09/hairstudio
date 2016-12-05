@@ -53,6 +53,7 @@
     <Compile Include="Entities\Message.cs" />
     <Compile Include="Facade.cs" />
     <Compile Include="GatewayService\AppointmentGateway.cs" />
+    <Compile Include="GatewayService\CustomerGateway.cs" />
     <Compile Include="GatewayService\HairdresserGateway.cs" />
     <Compile Include="IGatewayService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

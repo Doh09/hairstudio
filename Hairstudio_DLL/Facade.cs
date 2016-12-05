@@ -12,6 +12,7 @@ namespace Hairstudio_DLL
     {
         private IGatewayService<Hairdresser> _hairdresserGateway;
         private IGatewayService<Appointment> _appointmentGateway;
+        private IGatewayService<Customer> _customerGateway;
 
         public IGatewayService<Hairdresser> GetHairdresserGateway()
         {
@@ -21,6 +22,10 @@ namespace Hairstudio_DLL
         public IGatewayService<Appointment> GetAppointmentGateway()
         {
             return _appointmentGateway ?? (_appointmentGateway = new AppointmentGateway());
+        }
+        public IGatewayService<Customer> GetCustomerGateway()
+        {
+            return _customerGateway ?? (_customerGateway = new CustomerGateway());
         }
     }
 }

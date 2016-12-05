@@ -16,6 +16,7 @@ namespace Hairstudio_MVC.Controllers
     {
         private readonly IGatewayService<Appointment> _ag = new Facade().GetAppointmentGateway();
         private readonly IGatewayService<Hairdresser> _hg = new Facade().GetHairdresserGateway();
+        private readonly IGatewayService<Customer> _cg = new Facade().GetCustomerGateway();
 
         // GET: Appointments
         public ActionResult Index()
@@ -44,8 +45,11 @@ namespace Hairstudio_MVC.Controllers
         {
             var appointment = new Appointment();
             appointment.TimeRange = new TimeRange();
-            
-            return View();
+            var model = new VIewModel_CreateAppointment();
+            model.Appointment = appointment;
+            model.Hairdressers = _hg.GetAll();
+            model.Customers = _cg.GetAll();
+            return View(model);
         }
 
         // POST: Appointments/Create
@@ -53,15 +57,19 @@ namespace Hairstudio_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Appointment appointment)//[Bind(Include = "ID")]
+        public ActionResult Create(Appointment appointment, int selectedHairdresserID, int selectedCustomerID)//[Bind(Include = "ID")]
         {
+            appointment.Hairdresser = new Hairdresser();
+            appointment.Hairdresser.ID = selectedHairdresserID;
+            appointment.Customer = new Customer();
+            appointment.Customer.ID = selectedCustomerID;
             if (ModelState.IsValid)
             {
                 _ag.Create(appointment);
-                return RedirectToAction("Index");
+               
             }
 
-            return View(appointment);
+            return RedirectToAction("Index");
         }
 
         // GET: Appointments/Edit/5
@@ -141,12 +149,12 @@ namespace Hairstudio_MVC.Controllers
             {
                 return HttpNotFound();
             }
-            var model = new ViewModel_AHairdressersAppointments();
-            model.HairdresserID = hairdresser.ID;
-            model.HairdresserName = hairdresser.Name;
-            model.Appointments = hairdresser.Appointments;
-            model.WorkingDays = hairdresser.WorkingDays;
-            return View(model);
+            //var model = new ViewModel_AHairdressersAppointments();
+            //model.HairdresserID = hairdresser.ID;
+            //model.HairdresserName = hairdresser.Name;
+            //model.Appointments = hairdresser.Appointments;
+            //model.WorkingDays = hairdresser.WorkingDays;
+            return null; //View();
         }
         #endregion
     }

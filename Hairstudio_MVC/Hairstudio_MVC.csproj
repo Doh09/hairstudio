@@ -208,7 +208,6 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\TestClass.cs" />
-    <Compile Include="Models\ViewModel_AHairdressersAppointments.cs" />
     <Compile Include="Models\VIewModel_CreateAppointment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -412,7 +411,6 @@
     <Content Include="Views\Appointments\Edit.cshtml" />
     <Content Include="Views\Appointments\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
-    <Content Include="Views\Appointments\ViewHairdressersAppointments.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
     <Content Include="Views\Hairdressers\EditPassword.cshtml" />
   </ItemGroup>
