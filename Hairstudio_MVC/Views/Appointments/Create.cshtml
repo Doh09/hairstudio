@@ -5,16 +5,16 @@
     ViewBag.Title = "Create";
 }
 @{
-            var hairdresserDropDown = new List<SelectListItem>();
-            foreach (var item in Model.Hairdressers)
-            {
-                var selectListItem = new SelectListItem
-                {
-                    Text = item.Name,
-                    Value = item.ID.ToString(),
-                };
-                hairdresserDropDown.Add(selectListItem);
-            }
+    var hairdresserDropDown = new List<SelectListItem>();
+    foreach (var item in Model.Hairdressers)
+    {
+        var selectListItem = new SelectListItem
+        {
+            Text = item.Name,
+            Value = item.ID.ToString(),
+        };
+        hairdresserDropDown.Add(selectListItem);
+    }
 }
 @{
     var customerDropDown = new List<SelectListItem>();
@@ -28,7 +28,7 @@
         customerDropDown.Add(selectListItem);
     }
     }
-<h2>Create</h2>
+<h2>Opret ny frisørtid</h2>
 
 
 @using (Html.BeginForm())
@@ -36,7 +36,7 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Appointment</h4>
+        <h4>Frisørtid</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -86,7 +86,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Tilbage til oversigten", "Index")
 </div>
 
 @section Scripts {

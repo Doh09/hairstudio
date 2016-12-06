@@ -80,11 +80,16 @@ namespace Hairstudio_MVC.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Appointment appointment = _ag.Get(id.Value);
+            var model = new VIewModel_CreateAppointment();
+            model.Appointment = appointment;
+            model.Hairdressers = _hg.GetAll();
+            model.Customers = _cg.GetAll();
+
             if (appointment == null)
             {
                 return HttpNotFound();
             }
-            return View(appointment);
+            return View(model);
         }
 
         // POST: Appointments/Edit/5
@@ -92,8 +97,12 @@ namespace Hairstudio_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Appointment appointment) //[Bind(Include = "ID")] 
+        public ActionResult Edit(Appointment appointment, int selectedHairdresserID, int selectedCustomerID) //[Bind(Include = "ID")] 
         {
+            appointment.Hairdresser = new Hairdresser();
+            appointment.Hairdresser.ID = selectedHairdresserID;
+            appointment.Customer = new Customer();
+            appointment.Customer.ID = selectedCustomerID;
             if (ModelState.IsValid)
             {
                 _ag.Update(appointment);
