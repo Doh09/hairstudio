@@ -9,6 +9,10 @@ namespace HSRestAPI_DLL.Entities
 {
     public class Customer : User
     {
+        public Customer()
+        {
+            UserType = "Customer";
+        }
         /*Customer : User //ID and other variables inherited are tested in User.
         - Appointments
          */

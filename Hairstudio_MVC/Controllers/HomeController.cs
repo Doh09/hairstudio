@@ -20,6 +20,13 @@ namespace Hairstudio_MVC.Controllers
             return View();
         }
 
+        public ActionResult OnlineBooking()
+        {
+            ViewBag.Message = "Your online booking page.";
+
+            return View();
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

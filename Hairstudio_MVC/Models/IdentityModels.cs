@@ -33,5 +33,11 @@ namespace Hairstudio_MVC.Models
         public System.Data.Entity.DbSet<HSRestAPI_DLL.Entities.Hairdresser> Hairdressers { get; set; }
 
         public System.Data.Entity.DbSet<HSRestAPI_DLL.Entities.Appointment> Appointments { get; set; }
+
+        public System.Data.Entity.DbSet<HSRestAPI_DLL.Entities.Customer> Customers { get; set; }
+
+        public System.Data.Entity.DbSet<HSRestAPI_DLL.Entities.Message> Messages { get; set; }
+
+        public System.Data.Entity.DbSet<HSRestAPI_DLL.Entities.ServiceOffered> ServiceOffereds { get; set; }
     }
 }

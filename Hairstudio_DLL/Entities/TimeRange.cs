@@ -7,9 +7,12 @@ using System.Threading.Tasks;
 
 namespace HSRestAPI_DLL.Entities
 {
-    public class TimeRange : AbstractEntity
+    public class TimeRange : IEntity
     {
-        /*TimeRange : AbstractEntity
+        #region IEntity
+        public int ID { get; set; }
+        #endregion
+        /*TimeRange : IEntity
         - TheDate
         - Start time
         - End time
@@ -44,5 +47,6 @@ namespace HSRestAPI_DLL.Entities
             TheDate = date.Date;
         }
         #endregion
+
     }
 }

@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 
 namespace Hairstudio_DLL
 {
-    public class TimeRangeGateway : IGatewayService<TimeRange>
+    public class MessageGateway : IGatewayService<Message>
     {
         private void SetUpClientConnection(HttpClient client)
         {
@@ -20,73 +20,73 @@ namespace Hairstudio_DLL
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public TimeRange Create(TimeRange t)
+        public Message Create(Message t)
         {
             using (var client = new HttpClient())
             {
                 SetUpClientConnection(client);
 
-                HttpResponseMessage response = client.PostAsJsonAsync("api/TimeRanges", t).Result;
+                HttpResponseMessage response = client.PostAsJsonAsync("api/Messages", t).Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    return response.Content.ReadAsAsync<TimeRange>().Result;
+                    return response.Content.ReadAsAsync<Message>().Result;
                 }
                 return null;
             }
         }
 
-        public TimeRange Get(int ID)
+        public Message Get(int ID)
         {
             using (var client = new HttpClient())
             {
                 SetUpClientConnection(client);
-                HttpResponseMessage response = client.GetAsync($"api/TimeRanges/{ID}").Result;
+                HttpResponseMessage response = client.GetAsync($"api/Messages/{ID}").Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    return response.Content.ReadAsAsync<TimeRange>().Result;
+                    return response.Content.ReadAsAsync<Message>().Result;
                 }
                 return null;
             }
         }
 
-        public List<TimeRange> GetAll()
+        public List<Message> GetAll()
         {
             using (var client = new HttpClient())
             {
                 SetUpClientConnection(client);
-                HttpResponseMessage response = client.GetAsync("api/TimeRanges").Result;
+                HttpResponseMessage response = client.GetAsync("api/Messages").Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    return response.Content.ReadAsAsync<List<TimeRange>>().Result;
+                    return response.Content.ReadAsAsync<List<Message>>().Result;
                 }
                 return null;
             }
         }
 
-        public bool Remove(TimeRange t)
+        public bool Remove(Message t)
         {
             using (var client = new HttpClient())
             {
                 SetUpClientConnection(client);
-                HttpResponseMessage response = client.DeleteAsync($"api/TimeRanges/{t.ID}").Result;
+                HttpResponseMessage response = client.DeleteAsync($"api/Messages/{t.ID}").Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    return response.Content.ReadAsAsync<TimeRange>().Result != null;
+                    return response.Content.ReadAsAsync<Message>().Result != null;
                 }
                 return false;
             }
         }
 
-        public TimeRange Update(TimeRange t)
+        public Message Update(Message t)
         {
             using (var client = new HttpClient())
             {
                 SetUpClientConnection(client);
-                HttpResponseMessage response = client.PutAsJsonAsync($"api/TimeRanges/{t.ID}", t).Result;
+                HttpResponseMessage response = client.PutAsJsonAsync($"api/Messages/{t.ID}", t).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return response.Content.ReadAsAsync<TimeRange>().Result;
+                    return response.Content.ReadAsAsync<Message>().Result;
                 }
                 return null;
             }

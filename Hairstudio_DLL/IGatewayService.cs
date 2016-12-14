@@ -7,7 +7,7 @@ using HSRestAPI_DLL.Entities;
 
 namespace Hairstudio_DLL
 {
-    public interface IGatewayService<T> where T : AbstractEntity
+    public interface IGatewayService<T> where T : IEntity
     {
         /// <summary>
         /// Get a list of all objects the manager holds.

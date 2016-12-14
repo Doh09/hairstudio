@@ -9,6 +9,10 @@ namespace HSRestAPI_DLL.Entities
 {
     public class Hairdresser : User
     {
+        public Hairdresser()
+        {
+            UserType = "Hairdresser";
+        }
         /*Hairdresser : User //ID and other variables inherited are tested in User.
         - Working hours
         - Appointments
