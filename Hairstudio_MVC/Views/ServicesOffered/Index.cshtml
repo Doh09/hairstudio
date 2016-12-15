@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<HSRestAPI_DLL.Entities.ServiceOffered>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Oversigt";
 }
 
-<h2>Index</h2>
+<h2>Oversigt</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Opret nyt produkt/ny serviceydelse", "Create")
 </p>
 <table class="table">
     <tr>
@@ -29,9 +29,9 @@
             @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            @Html.ActionLink("Rediger", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Se detaljer", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Slet produkt/serviceydelse", "Delete", new { id = item.ID })
         </td>
     </tr>
 }

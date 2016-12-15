@@ -49,7 +49,7 @@ namespace Hairstudio_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Username,Password,Name,PhoneNumber,Email,UserType")] Hairdresser hairdresser)
+        public ActionResult Create([Bind(Include = "Username,Password,Name,PhoneNumber,Email")] Hairdresser hairdresser)
         {
             if (ModelState.IsValid)
             {

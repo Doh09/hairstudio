@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<HSRestAPI_DLL.Entities.Hairdresser>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Oversigt";
 }
 
-<h2>Index</h2>
+<h2>Oversigt</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Opret ny frisør", "Create")
 </p>
 <table class="table">
     <tr>
@@ -23,9 +23,6 @@
         <th>
             @Html.DisplayNameFor(model => model.Email)
         </th>
-        @*<th>
-            @Html.ActionLink("Continue Shopping", "Index", "Movie")
-        </th>*@
         <th></th>
     </tr>
 
@@ -44,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.Email)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Rediger", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Se detaljer", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Slet frisør", "Delete", new { id=item.ID })
         </td>
     </tr>
 }

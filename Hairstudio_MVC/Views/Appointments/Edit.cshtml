@@ -1,7 +1,7 @@
 ﻿@model Hairstudio_MVC.Models.ViewModel_CreateAppointment
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Rediger";
 }
 @{
     var hairdresserDropDown = new List<SelectListItem>();
@@ -29,7 +29,7 @@
         customerDropDown.Add(selectListItem);
     }
 }
-<h2>Edit</h2>
+<h2>Rediger</h2>
 
 
 @using (Html.BeginForm())
@@ -82,7 +82,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Gem" class="btn btn-default" />
             </div>
         </div>
     </div>

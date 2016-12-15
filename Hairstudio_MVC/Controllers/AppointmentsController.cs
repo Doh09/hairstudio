@@ -57,12 +57,13 @@ namespace Hairstudio_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Appointment appointment, int selectedHairdresserID, int selectedCustomerID)//[Bind(Include = "ID")]
+        public ActionResult Create(ViewModel_CreateAppointment model)
         {
+            Appointment appointment = model.Appointment;
             appointment.Hairdresser = new Hairdresser();
-            appointment.Hairdresser.ID = selectedHairdresserID;
+            appointment.Hairdresser.ID = model.selectedHairdresserID[0];
             appointment.Customer = new Customer();
-            appointment.Customer.ID = selectedCustomerID;
+            appointment.Customer.ID = model.selectedCustomerID[0];
             if (ModelState.IsValid)
             {
                 _ag.Create(appointment);
@@ -97,18 +98,18 @@ namespace Hairstudio_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Appointment appointment, int selectedHairdresserID, int selectedCustomerID) //[Bind(Include = "ID")] 
+        public ActionResult Edit(ViewModel_CreateAppointment model)
         {
+            Appointment appointment = model.Appointment;
             appointment.Hairdresser = new Hairdresser();
-            appointment.Hairdresser.ID = selectedHairdresserID;
+            appointment.Hairdresser.ID = model.selectedHairdresserID[0];
             appointment.Customer = new Customer();
-            appointment.Customer.ID = selectedCustomerID;
+            appointment.Customer.ID = model.selectedCustomerID[0];
             if (ModelState.IsValid)
             {
                 _ag.Update(appointment);
-                return RedirectToAction("Index");
             }
-            return View(appointment);
+            return RedirectToAction("Index");
         }
 
         // GET: Appointments/Delete/5

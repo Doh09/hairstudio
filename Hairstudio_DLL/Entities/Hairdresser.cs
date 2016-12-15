@@ -20,7 +20,7 @@ namespace HSRestAPI_DLL.Entities
         [Display(Name = "Frisør")]
         public override string Name { get; set; }
         public virtual List<TimeRange> WorkingDays { get; set; }
-        //public List<TimeRange> WorkingDays = new List<TimeRange>();
+        //public List<TheTimeRange> WorkingDays = new List<TheTimeRange>();
         public virtual List<Appointment> Appointments { get; set; }
         //public List<Appointment> Appointments = new List<Appointment>();
 

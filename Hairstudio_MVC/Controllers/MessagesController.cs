@@ -64,7 +64,7 @@ namespace Hairstudio_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Description, AreaMessageIsUsed")] Message message)
+        public ActionResult Create([Bind(Include = "Description")] Message message)
         {
             if (ModelState.IsValid)
             {

@@ -11,9 +11,7 @@ namespace Hairstudio_MVC.Models
     {
         [Required]
         public Appointment Appointment { get; set; }
-        [Required]
         public List<Hairdresser> Hairdressers { get; set; }
-        [Required]
         public List<Customer> Customers { get; set; }
         [Required]
         public List<int> selectedHairdresserID { get; set; }

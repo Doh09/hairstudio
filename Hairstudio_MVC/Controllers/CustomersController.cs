@@ -49,7 +49,7 @@ namespace Hairstudio_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Username,Password,PhoneNumber,Email,UserType")] Customer customer)
+        public ActionResult Create([Bind(Include = "Name,Username,Password,PhoneNumber,Email,UserType")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +80,7 @@ namespace Hairstudio_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,Username,Password,PhoneNumber,Email,UserType")] Customer customer)
+        public ActionResult Edit([Bind(Include = "ID, Name,Username,Password,PhoneNumber,Email")] Customer customer)
         {
             if (ModelState.IsValid)
             {
