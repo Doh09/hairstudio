@@ -1,27 +1,44 @@
-﻿@{
+﻿@model Hairstudio_MVC.Models.ViewModel_HomeIndex
+@{
     ViewBag.Title = "Home Page";
 }
 <div>
     <div class="row-md-4">
-        Row 1
-
         @* Carousel begin *@
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
+                @for (int i = 0; i < Model.CarouselImages.Count; i++)
+                {
+                    if (i == 0) //Set first image as active
+                    {
+                        <li data-target="#myCarousel" data-slide-to="@i" class="active"></li>
+                    }
+                    else
+                    {
+                        <li data-target="#myCarousel" data-slide-to="@i"></li>
+                    }
+                }
             </ol>
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img src="http://i.imgur.com/ipFeu7R.png" alt="Chania">
+                @for (int i = 0; i < Model.CarouselImages.Count; i++)
+                {
+                    if (i == 0) //Set first image as active
+                    {
+                     <div class="item active">
+                    <img src="@Model.CarouselImages[i].Description" alt="Chania">
                 </div>
-
-                <div class="item">
-                    <img src="http://i.imgur.com/KUJauPn.png" alt="Chania">
-                </div>
+                    }
+                    else
+                    {
+                     <div class="item">
+                    <img src="@Model.CarouselImages[i].Description" alt="Chania">
+                </div> }
+                }
+                
+                
             </div>
 
             <!-- Left and right controls -->
@@ -38,58 +55,67 @@
     </div>
     <div class="columns">
         <div class="col-md-4">
-            Column 1
             <div>
-                Velkommen til vores frisørsalon!<br />
-                Tak fordi du vælger os.<br />
+                <h3>Velkommen!</h3>
+                @Model.Welcome.Description
             </div>
         </div>
         <div class="col-md-4">
-            Column 2
             <div>
+                <h3>Åbningstider</h3>
                 <table class="table table-inverse">
-                    <thead>
-                        <tr>
-                            <th>Åbningstider</th>
-                        </tr>
-                    </thead>
+
                     <tbody>
-                        <tr>
-                            <th scope="row">Mandag</th>
-                            <td>8-17</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Tirsdag</th>
-                            <td>8-17</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Onsdag</th>
-                            <td>8-17</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Torsdag</th>
-                            <td>8-17</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Fredag</th>
-                            <td>8-17</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Lørdag-søndag</th>
-                            <td>Kun efter aftale</td>
-                        </tr>
+                    <tr>
+                        <th scope="row">Mandag</th>
+                        <td>@Model.Monday.Description</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Tirsdag</th>
+                        <td>@Model.Tuesday.Description</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Onsdag</th>
+                        <td>@Model.Wednesday.Description</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Torsdag</th>
+                        <td>@Model.Thursday.Description</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Fredag</th>
+                        <td>@Model.Friday.Description</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Lørdag</th>
+                        <td>@Model.Saturday.Description</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Søndag</th>
+                        <td>@Model.Sunday.Description</td>
+                    </tr>
                     </tbody>
                 </table>
 
             </div>
         </div>
         <div class="col-md-4">
-            Column 3
             <div>
-                Kontakt<br />
-                Telefon: 8888 8888<br />
+                <h3>Kontaktinformation</h3>
+                @Model.Contact.Description
             </div>
+
         </div>
     </div>
+    <div class="row-md-4">
+        @* Sticky footer begin *@
+        <div id="wrap">
+        </div>
+        <div id="main">
+            </div>
+            <div id="footer">
+            </div>
+            @* Sticky footer end *@
+        </div>
     <div class="clear"></div>
 </div>

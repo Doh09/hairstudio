@@ -1,0 +1,42 @@
+﻿@model Hairstudio_MVC.Models.ViewModel_AllPrices
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@if (Model.Message != null)
+{
+<p>@Model.Message.Description</p>
+}
+@if (Model.ServicesOffered != null)
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicesOffered.First().Message)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicesOffered.First().Price)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.ServicesOffered)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Message)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+else
+{
+    <p>Ingen priser er defineret</p>
+}

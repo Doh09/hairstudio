@@ -5,12 +5,12 @@
 }
 
 <h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h4>Husk http:// eller https:// foran links</h4>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AreaMessageIsUsed)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
@@ -20,14 +20,30 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Description)
+            @Html.DisplayFor(modelItem => item.AreaMessageIsUsed)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.DisplayFor(modelItem => item.Description)
         </td>
+
+        @if (item.AreaMessageIsUsed.Equals("imgcarousel")) //Only imgcarousel images can be added/deleted.
+        {
+            <td>
+                @Html.ActionLink("Rediger", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        }
+        else
+        {
+            <td>
+                @Html.ActionLink("Rediger", "Edit", new { id = item.ID }) |
+            </td>
+        }
+
     </tr>
 }
+    <p>
+        @Html.ActionLink("Tilføj billede til billedkarusellen", "Create")
+    </p>
 
 </table>

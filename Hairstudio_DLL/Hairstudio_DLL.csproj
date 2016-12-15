@@ -66,7 +66,6 @@
     <Compile Include="Entities\Appointment.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\Hairdresser.cs" />
-    <Compile Include="Entities\Image.cs" />
     <Compile Include="Entities\Message.cs" />
     <Compile Include="Facade.cs" />
     <Compile Include="GatewayService\AppointmentGateway.cs" />

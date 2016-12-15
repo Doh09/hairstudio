@@ -45,7 +45,7 @@ namespace Hairstudio_MVC.Controllers
         {
             var appointment = new Appointment();
             appointment.TimeRange = new TimeRange();
-            var model = new VIewModel_CreateAppointment();
+            var model = new ViewModel_CreateAppointment();
             model.Appointment = appointment;
             model.Hairdressers = _hg.GetAll();
             model.Customers = _cg.GetAll();
@@ -80,7 +80,7 @@ namespace Hairstudio_MVC.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Appointment appointment = _ag.Get(id.Value);
-            var model = new VIewModel_CreateAppointment();
+            var model = new ViewModel_CreateAppointment();
             model.Appointment = appointment;
             model.Hairdressers = _hg.GetAll();
             model.Customers = _cg.GetAll();

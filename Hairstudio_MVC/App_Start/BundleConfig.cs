@@ -25,7 +25,8 @@ namespace Hairstudio_MVC
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+              "~/Content/themes/w3-theme-black.css"));
 
             #region jquery UI
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
@@ -43,16 +44,17 @@ namespace Hairstudio_MVC
               "~/Content/themes/base/jquery.ui.tabs.css",
               "~/Content/themes/base/jquery.ui.datepicker.css",
               "~/Content/themes/base/jquery.ui.progressbar.css",
-              "~/Content/themes/base/jquery.ui.theme.css"));
+              "~/Content/themes/base/jquery.ui.theme.css",
+              "~/Content/StickyFooter.css"));
             #endregion
 
             #region Timepicker
-            bundles.Add(new ScriptBundle("~/bundles/mycustomjquery")
-                    .Include("~/Scripts/jquery.timepicker.js")
-                    .Include("~/Scripts/jquery.timepicker.min.js"));
+            //bundles.Add(new ScriptBundle("~/bundles/mycustomjquery")
+            //        .Include("~/Scripts/jquery.timepicker.js")
+            //        .Include("~/Scripts/jquery.timepicker.min.js"));
 
-            bundles.Add(new StyleBundle("~/Content/timepicker").Include(
-                "~/Content/themes/base/jquery.timepicker.css"));
+            //bundles.Add(new StyleBundle("~/Content/timepicker").Include(
+            //    "~/Content/themes/base/jquery.timepicker.css"));
             #endregion
         }
     }

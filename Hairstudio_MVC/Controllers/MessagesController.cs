@@ -23,43 +23,6 @@ namespace Hairstudio_MVC.Controllers
             return View(messages);
         }
 
-        // GET: Messages/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Message message = _mg.Get(id.Value);
-            if (message == null)
-            {
-                return HttpNotFound();
-            }
-            return View(message);
-        }
-
-        // GET: Messages/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Messages/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Description")] Message message)
-        {
-            if (ModelState.IsValid)
-            {
-                _mg.Create(message);
-                return RedirectToAction("Index");
-            }
-
-            return View(message);
-        }
-
         // GET: Messages/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -80,7 +43,7 @@ namespace Hairstudio_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Description")] Message message)
+        public ActionResult Edit([Bind(Include = "ID, Description")] Message message)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +53,29 @@ namespace Hairstudio_MVC.Controllers
             return View(message);
         }
 
-        // GET: Messages/Delete/5
+        // GET: ServicesOffered/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: ServicesOffered/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Description, AreaMessageIsUsed")] Message message)
+        {
+            if (ModelState.IsValid)
+            {
+                message.AreaMessageIsUsed = "imgcarousel";
+                _mg.Create(message);
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        // GET: ServicesOffered/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,7 +90,7 @@ namespace Hairstudio_MVC.Controllers
             return View(message);
         }
 
-        // POST: Messages/Delete/5
+        // POST: ServicesOffered/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

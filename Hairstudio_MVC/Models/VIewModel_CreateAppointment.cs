@@ -7,7 +7,7 @@ using HSRestAPI_DLL.Entities;
 
 namespace Hairstudio_MVC.Models
 {
-    public class VIewModel_CreateAppointment
+    public class ViewModel_CreateAppointment
     {
         [Required]
         public Appointment Appointment { get; set; }

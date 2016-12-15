@@ -15,12 +15,21 @@ namespace Hairstudio_MVC.Controllers
     public class ServicesOfferedController : Controller
     {
         private readonly IGatewayService<ServiceOffered> _sog = new Facade().GetServiceOfferedGateway();
+        private readonly IGatewayService<Message> _mg = new Facade().GetMessageGateway();
 
         // GET: ServicesOffered
         public ActionResult Index()
         {
-            var ServicesOffered = _sog.GetAll();
-            return View(ServicesOffered);
+            var servicesOffered = _sog.GetAll();
+            return View(servicesOffered);
+        }
+
+        public ActionResult AllPrices()
+        {
+            var model = new ViewModel_AllPrices();
+            model.ServicesOffered = _sog.GetAll();
+            model.Message = _mg.GetAll().FirstOrDefault(m => m.AreaMessageIsUsed.Equals("pricelist_msg"));
+            return View(model);
         }
 
         // GET: ServicesOffered/Details/5
@@ -49,7 +58,7 @@ namespace Hairstudio_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Price")] ServiceOffered serviceOffered)
+        public ActionResult Create([Bind(Include = "Price,Message")] ServiceOffered serviceOffered)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +89,7 @@ namespace Hairstudio_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Price")] ServiceOffered serviceOffered)
+        public ActionResult Edit([Bind(Include = "ID, Price,Message")] ServiceOffered serviceOffered)
         {
             if (ModelState.IsValid)
             {
