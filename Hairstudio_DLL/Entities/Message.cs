@@ -18,7 +18,7 @@ namespace HSRestAPI_DLL.Entities
         */
         [Display(Name = "Område på hjemmesiden")]
         public string AreaMessageIsUsed { get; set; }
-        [Display(Name = "Tekst der kan redigeres")]
+        [Display(Name = "Tekst/link")]
         public string Description { get; set; }
 
     }

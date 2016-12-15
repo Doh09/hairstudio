@@ -17,7 +17,7 @@ namespace HSRestAPI_DLL.Entities
         - Working hours
         - Appointments
          */
-        [Display(Name = "Frisør")]
+        [Display(Name = "Frisørnavn")]
         public override string Name { get; set; }
         public virtual List<TimeRange> WorkingDays { get; set; }
         //public List<TheTimeRange> WorkingDays = new List<TheTimeRange>();

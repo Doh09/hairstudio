@@ -16,7 +16,7 @@ namespace HSRestAPI_DLL.Entities
         /*Customer : User //ID and other variables inherited are tested in User.
         - Appointments
          */
-        [Display(Name = "Kunde")]
+        [Display(Name = "Kundenavn")]
         public override string Name { get; set; }
         public List<Appointment> Appointments { get; set; }
 
