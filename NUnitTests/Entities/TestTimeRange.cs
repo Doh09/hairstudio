@@ -28,9 +28,6 @@ namespace NUnitTests.Entities
             timeRange.EndTime.AddHours(8);
 
             Assert.AreEqual(timeRange.ID, 1);
-            //Assert start/end times are different.
-            Assert.AreNotEqual(timeRange.StartTime, timeRange.TheDate);
-            Assert.AreNotEqual(timeRange.StartTime, timeRange.EndTime);
             //Assert dates are set as expected.
             Assert.AreEqual(timeRange.TheDate.Date, DateTime.Now.Date);
             Assert.AreEqual(timeRange.StartTime.Date, DateTime.Now.Date); //Check if start date is set right.

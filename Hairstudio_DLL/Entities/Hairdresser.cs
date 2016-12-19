@@ -17,8 +17,8 @@ namespace Hairstudio_DLL.Entities
          */
         [Display(Name = "Frisørnavn")]
         public override string Name { get; set; }
-        public virtual List<TimeRange> WorkingDays { get; set; }
-        public virtual List<Appointment> Appointments { get; set; }
+        public virtual List<TimeRange> WorkingDays { get; set; } = new List<TimeRange>();
+        public virtual List<Appointment> Appointments { get; set; } = new List<Appointment>();
 
     }
 }
