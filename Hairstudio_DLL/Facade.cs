@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Hairstudio_DLL.Entities;
 using Hairstudio_DLL.GatewayService;
-using HSRestAPI_DLL.Entities;
 
 namespace Hairstudio_DLL
 {

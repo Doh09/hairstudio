@@ -50,11 +50,24 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Entities\TestAppointment.cs" />
+    <Compile Include="Entities\TestCustomer.cs" />
+    <Compile Include="Entities\TestHairdresser.cs" />
+    <Compile Include="Entities\TestMessage.cs" />
+    <Compile Include="Entities\TestServiceOffered.cs" />
+    <Compile Include="Entities\TestTimeRange.cs" />
+    <Compile Include="Entities\TestUser.cs" />
+    <Compile Include="Entities\UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hairstudio_DLL\Hairstudio_DLL.csproj">
+      <Project>{31c21f29-6504-4ac9-9c1a-fa0ce228b828}</Project>
+      <Name>Hairstudio_DLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

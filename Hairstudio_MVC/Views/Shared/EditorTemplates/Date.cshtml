@@ -6,23 +6,6 @@
         dt = (System.DateTime)Model;
 
     }
-    @Html.TextBox("", String.Format("{0:d}", dt.ToShortDateString()), new { @class = "datefield", type = "date", value = Model })
+    @Html.TextBox("", String.Format("{0:d}", dt.ToShortDateString()), 
+    new { @class = "datefield", type = "date", value = Model })
 }
-
-
-@*@{//Standard code, commented out instead of delete just in case I need it.
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Date</title>
-</head>
-<body>
-    <div> 
-    </div>
-</body>
-</html>*@

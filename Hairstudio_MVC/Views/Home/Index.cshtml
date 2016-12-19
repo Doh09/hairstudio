@@ -1,6 +1,6 @@
 ﻿@model Hairstudio_MVC.Models.ViewModel_HomeIndex
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Forside";
 }
 <div>
     <div class="row-md-4">
@@ -28,13 +28,13 @@
                     if (i == 0) //Set first image as active
                     {
                      <div class="item active">
-                    <img src="@Model.CarouselImages[i].Description" alt="Chania">
+                    <img src="@Model.CarouselImages[i].Description" alt="Intet billede">
                 </div>
                     }
                     else
                     {
                      <div class="item">
-                    <img src="@Model.CarouselImages[i].Description" alt="Chania">
+                    <img src="@Model.CarouselImages[i].Description" alt="Intet billede">
                 </div> }
                 }
                 

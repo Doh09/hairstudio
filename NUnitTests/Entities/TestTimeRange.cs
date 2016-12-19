@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Hairstudio_DLL.Entities;
+using NUnit.Framework;
+
+namespace NUnitTests.Entities
+{
+    [TestFixture]
+    public class TestTimeRange
+    {
+        [Test]
+        public void TestProperties()
+        {
+            /*TimeRange : IEntity
+            - ID
+            - TheDate
+            - Start time
+            - End time
+             */
+            TimeRange timeRange = new TimeRange();
+            timeRange.ID = 1;
+            timeRange.TheDate = DateTime.Now;
+            timeRange.StartTime = DateTime.Now;
+            timeRange.EndTime = DateTime.Now; //Fix
+            timeRange.EndTime.AddHours(8);
+
+            Assert.AreEqual(timeRange.ID, 1);
+            //Assert start/end times are different.
+            Assert.AreNotSame(timeRange.StartTime, timeRange.TheDate);
+            Assert.AreNotSame(timeRange.StartTime, timeRange.EndTime);
+            //Assert dates are set as expected.
+            Assert.AreSame(timeRange.TheDate.Date, DateTime.Now.Date);
+            Assert.AreSame(timeRange.StartTime.Date, DateTime.Now.Date); //Check if start date is set right.
+            Assert.AreSame(timeRange.EndTime.Date, DateTime.Now.Date); //Check if end date is set right.
+            //Assert that times can be changed, assert that times are as expected.
+        }
+    }
+}

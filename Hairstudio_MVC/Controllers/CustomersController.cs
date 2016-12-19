@@ -7,7 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Hairstudio_DLL;
-using HSRestAPI_DLL.Entities;
+using Hairstudio_DLL.Entities;
 using Hairstudio_MVC.Models;
 
 namespace Hairstudio_MVC.Controllers
@@ -17,6 +17,7 @@ namespace Hairstudio_MVC.Controllers
         private readonly IGatewayService<Customer> _cg = new Facade().GetCustomerGateway();
 
         // GET: Customers
+        [HttpGet]
         public ActionResult Index()
         {
             var customers = _cg.GetAll(); ;
@@ -24,6 +25,7 @@ namespace Hairstudio_MVC.Controllers
         }
 
         // GET: Customers/Details/5
+        [HttpGet]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -39,6 +41,7 @@ namespace Hairstudio_MVC.Controllers
         }
 
         // GET: Customers/Create
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
@@ -61,6 +64,7 @@ namespace Hairstudio_MVC.Controllers
         }
 
         // GET: Customers/Edit/5
+        [HttpGet]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -91,6 +95,7 @@ namespace Hairstudio_MVC.Controllers
         }
 
         // GET: Customers/Delete/5
+        [HttpGet]
         public ActionResult Delete(int? id)
         {
             if (id == null)

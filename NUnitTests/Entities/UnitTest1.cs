@@ -1,6 +1,6 @@
-﻿using System;
-using NUnit.Framework;
-namespace NUnitTests
+﻿using NUnit.Framework;
+
+namespace NUnitTests.Entities
 {
     [TestFixture]
     public class UnitTest1

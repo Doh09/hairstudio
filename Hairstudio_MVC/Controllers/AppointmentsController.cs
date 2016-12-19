@@ -7,7 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Hairstudio_DLL;
-using HSRestAPI_DLL.Entities;
+using Hairstudio_DLL.Entities;
 using Hairstudio_MVC.Models;
 
 namespace Hairstudio_MVC.Controllers
@@ -19,6 +19,7 @@ namespace Hairstudio_MVC.Controllers
         private readonly IGatewayService<Customer> _cg = new Facade().GetCustomerGateway();
 
         // GET: Appointments
+        [HttpGet]
         public ActionResult Index()
         {
             var appointments = _ag.GetAll(); ;
@@ -26,6 +27,7 @@ namespace Hairstudio_MVC.Controllers
         }
 
         // GET: Appointments/Details/5
+        [HttpGet]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -41,6 +43,7 @@ namespace Hairstudio_MVC.Controllers
         }
 
         // GET: Appointments/Create
+        [HttpGet]
         public ActionResult Create()
         {
             var appointment = new Appointment();
@@ -67,13 +70,14 @@ namespace Hairstudio_MVC.Controllers
             if (ModelState.IsValid)
             {
                 _ag.Create(appointment);
-               
+
             }
 
             return RedirectToAction("Index");
         }
 
         // GET: Appointments/Edit/5
+        [HttpGet]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -113,6 +117,7 @@ namespace Hairstudio_MVC.Controllers
         }
 
         // GET: Appointments/Delete/5
+        [HttpGet]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -145,27 +150,5 @@ namespace Hairstudio_MVC.Controllers
         //    }
         //    base.Dispose(disposing);
         //}
-
-        #region Non-scaffolded
-                // GET: Appointments/Edit/5
-        public ActionResult ViewHairdressersAppointments(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Hairdresser hairdresser = _hg.Get(id.Value);
-            if (hairdresser == null)
-            {
-                return HttpNotFound();
-            }
-            //var model = new ViewModel_AHairdressersAppointments();
-            //model.HairdresserID = hairdresser.ID;
-            //model.HairdresserName = hairdresser.Name;
-            //model.Appointments = hairdresser.Appointments;
-            //model.WorkingDays = hairdresser.WorkingDays;
-            return null; //View();
-        }
-        #endregion
     }
 }

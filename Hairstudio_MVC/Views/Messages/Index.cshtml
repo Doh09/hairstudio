@@ -1,49 +1,52 @@
-﻿@model IEnumerable<HSRestAPI_DLL.Entities.Message>
+﻿@model IEnumerable<Hairstudio_DLL.Entities.Message>
 
 @{
-    ViewBag.Title = "Ovesigt";
+    ViewBag.Title = "Oversigt";
 }
 
 <h2>Oversigt</h2>
 <h4>Husk http:// eller https:// foran links</h4>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.AreaMessageIsUsed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th></th>
-    </tr>
+<div style="overflow-x:auto;">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AreaMessageIsUsed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AreaMessageIsUsed)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-
-        @if (item.AreaMessageIsUsed.Equals("imgcarousel")) //Only imgcarousel images can be added/deleted.
+        @foreach (var item in Model)
         {
-            <td>
-                @Html.ActionLink("Rediger", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-            </td>
-        }
-        else
-        {
-            <td>
-                @Html.ActionLink("Rediger", "Edit", new { id = item.ID }) |
-            </td>
-        }
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AreaMessageIsUsed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
 
-    </tr>
-}
-    <p>
-        @Html.ActionLink("Tilføj billede til billedkarusellen", "Create")
-    </p>
+                @if (item.AreaMessageIsUsed.Equals("imgcarousel")) //Only imgcarousel images can be added/deleted.
+                {
+                    <td>
+                        @Html.ActionLink("Rediger", "Edit", new { id = item.ID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        @Html.ActionLink("Rediger", "Edit", new { id = item.ID }) |
+                    </td>
+                }
 
-</table>
+            </tr>
+        }
+        <p>
+            @Html.ActionLink("Tilføj billede til billedkarusellen", "Create")
+        </p>
+
+    </table>
+    </div>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using HSRestAPI_DLL.Entities;
+using Hairstudio_DLL.Entities;
 
 namespace Hairstudio_MVC.Models
 {

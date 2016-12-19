@@ -224,7 +224,6 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\TestClass.cs" />
     <Compile Include="Models\ViewModel_CreateAppointment.cs" />
     <Compile Include="Models\ViewModel_AllPrices.cs" />
     <Compile Include="Models\ViewModel_HomeIndex.cs" />
@@ -364,6 +363,8 @@
     <Content Include="Content\bootstrap\bootstrap.less" />
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="ClassDiagram1.cd" />
+    <None Include="Properties\PublishProfiles\examfall2016shop - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\HairstudioMVC20161114123002.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />

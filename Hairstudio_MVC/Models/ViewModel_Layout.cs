@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using Hairstudio_DLL;
-using HSRestAPI_DLL.Entities;
+using Hairstudio_DLL.Entities;
 
 namespace Hairstudio_MVC.Models
 {

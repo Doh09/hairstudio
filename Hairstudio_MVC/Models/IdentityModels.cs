@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Hairstudio_DLL.Entities;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -30,14 +31,14 @@ namespace Hairstudio_MVC.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<HSRestAPI_DLL.Entities.Hairdresser> Hairdressers { get; set; }
+        public System.Data.Entity.DbSet<Hairdresser> Hairdressers { get; set; }
 
-        public System.Data.Entity.DbSet<HSRestAPI_DLL.Entities.Appointment> Appointments { get; set; }
+        public System.Data.Entity.DbSet<Appointment> Appointments { get; set; }
 
-        public System.Data.Entity.DbSet<HSRestAPI_DLL.Entities.Customer> Customers { get; set; }
+        public System.Data.Entity.DbSet<Customer> Customers { get; set; }
 
-        public System.Data.Entity.DbSet<HSRestAPI_DLL.Entities.Message> Messages { get; set; }
+        public System.Data.Entity.DbSet<Message> Messages { get; set; }
 
-        public System.Data.Entity.DbSet<HSRestAPI_DLL.Entities.ServiceOffered> ServiceOffereds { get; set; }
+        public System.Data.Entity.DbSet<ServiceOffered> ServiceOffereds { get; set; }
     }
 }

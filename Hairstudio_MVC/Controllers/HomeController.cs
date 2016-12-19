@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Hairstudio_DLL;
+using Hairstudio_DLL.Entities;
 using Hairstudio_MVC.Models;
-using HSRestAPI_DLL.Entities;
 
 namespace Hairstudio_MVC.Controllers
 {
